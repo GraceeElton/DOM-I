@@ -44,47 +44,45 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // navs 
 
-let navLink = document.querySelectorAll("a");
+const nav = document.querySelectorAll("nav a");
 
-let services = document.createTextNode(siteContent.nav["nav-item-1"]);
-let product = document.createTextNode(siteContent.nav["nav-item-2"]);
-let vision = document.createTextNode(siteContent.nav["nav-item-3"]);
-let features = document.createTextNode(siteContent.nav["nav-item-4"]);
-let about = document.createTextNode(siteContent.nav["nav-item-5"]);
-let contact = document.createTextNode(siteContent.nav["nav-item-6"]);
+nav.forEach(element => element.style.color = "green");
 
-navLink[0].append(services);
-navLink[1].append(product);
-navLink[2].append(vision);
-navLink[3].append(features);
-navLink[4].append(about);
-navLink[5].append(contact);
-
-navLink.forEach(color => (
-  color.style.color = "green"
-));
+nav[0].textContent = siteContent.nav["nav-item-1"];
+nav[1].textContent = siteContent.nav["nav-item-2"];
+nav[2].textContent = siteContent.nav["nav-item-3"];
+nav[3].textContent = siteContent.nav["nav-item-4"];
+nav[4].textContent = siteContent.nav["nav-item-5"];
+nav[5].textContent = siteContent.nav["nav-item-6"];
 
 const navigation = document.querySelector("nav");
 
-const pretend = document.createTextNode("Pre");
-const attend = document.createTextNode("App");
+// Create two new elements
+const newNav = document.querySelector("nav");
 
-navLink[0].prepend(pretend);
-navLink[5].appendChild(attend);
+const newElement1 = document.createElement('a');
+newElement1.textContent = "Home";
+newElement1.href = "#";
+newElement1.style.color = "green";
+
+const newElement2 = document.createElement('a');
+newElement2.textContent = "Blog";
+newElement2.href = "#";
+newElement2.style.color = "green";
+
+// Prepend and Append the two new elements
+newNav.prepend(newElement1);
+newNav.appendChild(newElement2);
 
 
 
 //cta
 
 const ctaH1 = document.querySelector('h1');
-const ctaText = document.createTextNode(siteContent.cta.h1);
-
-ctaH1.append(ctaText);
+ctaH1.textContent = siteContent.cta.h1;
 
 const ctaButton = document.querySelector('button');
-const btnText = document.createTextNode(siteContent.cta.button);
-
-ctaButton.append(btnText);
+ctaButton.textContent = siteContent.cta.button;
 
 
 const ctaImg = document.getElementById("cta-img");
@@ -94,36 +92,37 @@ ctaImg.setAttribute('src', siteContent.cta["img-src"]);
 
 // main content
 
-let mainContent = document.querySelectorAll('.text-content')
+const sectionHeaders = document.querySelectorAll(".main-content h4");
+sectionHeaders[0].textContent = siteContent["main-content"]["features-h4"]
+sectionHeaders[1].textContent = siteContent["main-content"]["about-h4"]
+sectionHeaders[2].textContent = siteContent["main-content"]["services-h4"]
+sectionHeaders[3].textContent = siteContent["main-content"]["product-h4"]
+sectionHeaders[4].textContent = siteContent["main-content"]["vision-h4"]
 
-mainContent[0].querySelector('h4').textContent = siteContent['main-content']['features-h4']
-mainContent[0].querySelector('p').textContent = siteContent['main-content']['features-content']
-mainContent[1].querySelector('h4').textContent = siteContent['main-content']['about-h4']
-mainContent[1].querySelector('p').textContent = siteContent['main-content']['about-content']
-mainContent[2].querySelector('h4').textContent = siteContent['main-content']['services-h4']
-mainContent[2].querySelector('p').textContent = siteContent['main-content']['services-content']
-mainContent[3].querySelector('h4').textContent = siteContent['main-content']['product-h4']
-mainContent[3].querySelector('p').textContent = siteContent['main-content']['product-content']
-mainContent[4].querySelector('h4').textContent = siteContent['main-content']['vision-h4']
-mainContent[4].querySelector('p').textContent = siteContent['main-content']['vision-content']
+const sectionContent = document.querySelectorAll(".main-content p");
+sectionContent[0].textContent = siteContent["main-content"]["features-content"];
+sectionContent[1].textContent = siteContent["main-content"]["about-content"];
+sectionContent[2].textContent = siteContent["main-content"]["services-content"];
+sectionContent[3].textContent = siteContent["main-content"]["product-content"];
+sectionContent[4].textContent = siteContent["main-content"]["vision-content"];
 
-let logo3= document.querySelector("#middle-img")
+
+let logo3 = document.querySelector("#middle-img")
 logo3.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
 
 
 //contact
 
-let contactInfo = document.querySelector ('.contact')
+const contactH4 = document.querySelectorAll(".contact h4");
+const contactP = document.querySelectorAll(".contact p");
 
-contactInfo.getElementsByTagName('h4')[0].textContent = siteContent["contact"]["contact-h4"]
-contactInfo.getElementsByTagName('p')[0].textContent = siteContent["contact"]["address"]
-contactInfo.getElementsByTagName('p')[1].textContent = siteContent["contact"]["phone"]
-contactInfo.getElementsByTagName('p')[2].textContent = siteContent["contact"]["email"] 
-
+contactH4[0].textContent = siteContent['contact']["contact-h4"];
+contactP[0].textContent = siteContent['contact']["address"];
+contactP[1].textContent = siteContent['contact']["phone"];
+contactP[2].textContent = siteContent['contact']["email"];
 
 //footer
 
-const copyright = document.querySelector("footer > p");
-const cr = document.createTextNode(siteContent.footer.copyright);
-copyright.append(cr);
+const footer = document.querySelector("footer p");
+footer.textContent = siteContent.footer["copyright"]; 
